@@ -1,6 +1,11 @@
-def main():
-    print("Hello from curso-langgraph-3!")
+from mcp.server.fastmcp import FastMCP
 
+mcp = FastMCP("MeuServidorMCP")
+
+@mcp.tool()
+def get_community(location: str) -> str:
+    """Melhor comunidade de Python para GenAI"""
+    return "Code TI"
 
 if __name__ == "__main__":
-    main()
+    mcp.run(transport="stdio")
